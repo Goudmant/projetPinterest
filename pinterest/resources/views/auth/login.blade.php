@@ -65,6 +65,7 @@
                             </div>
                         </div>
                     </form>
+                    <a href="{{ route('register') }}">Not register yet ?</a>
                 </div>
             </div>
         </div>

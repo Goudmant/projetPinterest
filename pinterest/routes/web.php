@@ -14,7 +14,7 @@ use App\Http\Controllers\MainController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[MainController::class, 'home']);
+Route::get('/',[MainController::class, 'home'])->name('home');
 
 Route::get('/articles', [ MainController::class, 'index'])->name('articles');
 

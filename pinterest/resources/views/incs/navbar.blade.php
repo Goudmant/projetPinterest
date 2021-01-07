@@ -5,10 +5,19 @@
         </div>
         <nav class="header__nav">
             <ul>
-                <li><a href="./home.html">Home</a></li>
-                <li><a href="./dashboard.html">Dashboard</a></li>
-                <li><a href="./login.html">Login</a></li>
-                <li><a href="./register.html">Register</a></li>
+                <li><a href="{{ route('home') }}">Home</a></li>
+            </ul>
+            <ul>
+                @if (Auth::user())
+                <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
+                <li><a href="/profil">Dashboard</a></li>
+                @else
+                <li><a href="{{ route('login') }}">Login</a></li>
+                @endif
             </ul>
         </nav>
     </div>
