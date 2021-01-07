@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Article;
+use Illuminate\Support\Str;
 
 class ArticleObserver
 {
@@ -14,7 +15,8 @@ class ArticleObserver
      */
     public function created(Article $article)
     {
-        //
+        $article->slug = Str::slug($article->title, '-');
+        $article->save();
     }
 
     /**
