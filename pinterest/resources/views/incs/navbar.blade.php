@@ -5,7 +5,7 @@
         </div>
         <nav class="header__nav">
             <ul>
-                <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="{{ route('articles') }}">Home</a></li>
             </ul>
             <ul>
                 @if (Auth::user())
