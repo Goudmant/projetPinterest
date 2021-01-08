@@ -3,6 +3,7 @@
 use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,11 @@ use App\Http\Controllers\MainController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[MainController::class, 'home'])->name('home');
+Route::get('/',[MainController::class, 'index'])->name('home');
 
-Route::get('/articles', [ MainController::class, 'index'])->name('articles');
+// Route::get('/articles', [ MainController::class, 'index'])->name('articles');
 
 Route::get('/articles/{slug}', [ MainController::class, 'show'])->name('article');
+Route::get('/profil', [ ArticleController::class, 'index'])->middleware('user')->name('profil');
 
 Auth::routes();

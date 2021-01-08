@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 use App\Http\Requests\ArticleRequest;
 
@@ -14,7 +15,10 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::paginate(10);
+        return view('profil', [
+            'articles' => $articles
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('create');
+        //
     }
 
     /**
@@ -35,7 +39,7 @@ class ArticleController extends Controller
      */
     public function store(ArticleRequest $request)
     {
-       $validated = $request->validated();
+    //    $validated = $request->validated();
        //parametres sont valides
     }
 

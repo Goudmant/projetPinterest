@@ -27,8 +27,8 @@ class ArticleRequest extends FormRequest
             'name' => 'required|min:5|max:20',
             'email' => 'required|min:5|max:100|email',
             'username' => 'required|min:5|max:20',
-            'password' => 'required|min:8|max:20',
-            'confirmPassword' => 'required|min:8|max:20'
+            'password' => 'required|min:5|max:20',
+            'confirmPassword' => 'required|min:5|max:20'
            ];
     }
 

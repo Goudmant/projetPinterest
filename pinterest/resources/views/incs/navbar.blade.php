@@ -5,7 +5,7 @@
         </div>
         <nav class="header__nav">
             <ul>
-                <li><a href="{{ route('articles') }}">Home</a></li>
+                <li><a href="{{ route('home') }}">Home</a></li>
             </ul>
             <ul>
                 @if (Auth::user())
@@ -14,7 +14,7 @@
                         @csrf
                         <button type="submit">Logout</button>
                     </form>
-                <li><a href="/profil">Dashboard</a></li>
+                <li><a href="{{ route('profil') }}">Mon profil</a></li>
                 @else
                 <li><a href="{{ route('login') }}">Login</a></li>
                 @endif
